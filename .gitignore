@@ -9,4 +9,6 @@
 /captures
 .externalNativeBuild
 /app/src/main/res/raw/*
+!/app/src/main/res/raw/.gitkeep
 /app/src/main/resPlayer/raw/*
+!/app/src/main/resPlayer/raw/.gitkeep
