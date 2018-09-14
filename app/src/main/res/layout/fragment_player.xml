@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Player">
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mediaControlPanel" >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/mediaControlPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:elevation="2dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/mediaTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/colorAccentNormal"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/mediaTextArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/mediaButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/rewindButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonshape2"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_fast_rewind_black_24dp"
+                    android:contentDescription="@string/rewind" />
+
+                <ImageButton
+                    android:id="@+id/pausePlayButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonshape"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:padding="12dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_play_arrow_white_24dp"
+                    android:contentDescription="@string/playPausa" />
+
+                <ImageButton
+                    android:id="@+id/forwardButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonshape2"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_fast_forward_black_24dp"
+                    android:contentDescription="@string/forward" />
+
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
